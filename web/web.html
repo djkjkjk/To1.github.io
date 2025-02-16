@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+      <head>
+           <meta charset="utf-8">
+           <title> Tổ 1 </title>
+           <link rel="stylesheet" href="mystyle.css">
+           <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #821414;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .navbar img {
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .team-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .team-section h1 {
+            color: #821414;
+            font-size: 2.5rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-card h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .profile-card p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar a {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="https://via.placeholder.com/50" alt="Logo">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <h1>Meet Our Team</h1>
+        <div class="team-grid">
+            <!-- Profile Card 1 -->
+            <div class="profile-card" data-aos="fade-up">
+                <img src="https://via.placeholder.com/120" alt="Phạm Nguyễn Hồng Phúc">
+                <h2>Phạm Nguyễn Hồng Phúc</h2>
+                <p><b>Birthday:</b> 03/03/2007</p>
+                <p><b>Role:</b> Tổ trưởng</p>
+                <p>Phúc is a responsible team leader...</p>
+            </div>
+
+            <!-- Profile Card 2 -->
+            <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://via.placeholder.com/120" alt="Nguyễn Thị Bình An">
+                <h2>Nguyễn Thị Bình An</h2>
+                <p><b>Birthday:</b> 07/08/2007</p>
+                <p><b>Role:</b> Member</p>
+                <p>An contributes her talents to the team...</p>
+            </div>
+
+            <!-- Profile Card 3 -->
+            <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://via.placeholder.com/120" alt="Trần Huy Hoàng">
+                <h2>Trần Huy Hoàng</h2>
+                <p><b>Birthday:</b> 15/02/2007</p>
+                <p><b>Role:</b> Member</p>
+                <p>Hoàng provides technical support...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function toggleMenu() {
+            const links = document.querySelectorAll('.navbar a');
+            links.forEach(link => link.style.display = link.style.display === 'block' ? 'none' : 'block');
+        }
+    </script>
+
+</body>
+</html>
